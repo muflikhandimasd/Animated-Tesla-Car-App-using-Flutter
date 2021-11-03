@@ -116,20 +116,6 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                     AnimatedPositioned(
                       duration: defaultDuration,
-                      top: _controller.selectedBotttomTab == 0
-                          ? constraints.maxHeight * 0.13
-                          : constraints.maxHeight / 2,
-                      // animated the lock
-                      child: AnimatedOpacity(
-                        duration: defaultDuration,
-                        opacity: _controller.selectedBotttomTab == 0 ? 1 : 0,
-                        child: DoorLock(
-                            isLock: _controller.isBonnetDoorLock,
-                            press: _controller.updateBonnetDoorLock),
-                      ),
-                    ),
-                    AnimatedPositioned(
-                      duration: defaultDuration,
                       bottom: _controller.selectedBotttomTab == 0
                           ? constraints.maxHeight * 0.17
                           : constraints.maxHeight / 2,
@@ -140,6 +126,20 @@ class _HomeScreenState extends State<HomeScreen>
                         child: DoorLock(
                             isLock: _controller.isTrunkDoorLock,
                             press: _controller.updateTrunkDoorLock),
+                      ),
+                    ),
+                    AnimatedPositioned(
+                      duration: defaultDuration,
+                      top: _controller.selectedBotttomTab == 0
+                          ? constraints.maxHeight * 0.17
+                          : constraints.maxHeight / 2,
+                      // animated the lock
+                      child: AnimatedOpacity(
+                        duration: defaultDuration,
+                        opacity: _controller.selectedBotttomTab == 0 ? 1 : 0,
+                        child: DoorLock(
+                            isLock: _controller.isBonnetDoorLock,
+                            press: _controller.updateBonnetDoorLock),
                       ),
                     ),
 
