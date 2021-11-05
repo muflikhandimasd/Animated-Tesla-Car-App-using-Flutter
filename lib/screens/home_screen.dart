@@ -137,6 +137,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
                     // Animated process
+                    // Right
                     AnimatedPositioned(
                       duration: defaultDuration,
                       right: _controller.selectedBotttomTab == 0
@@ -151,6 +152,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             press: _controller.updateRightDoorLock),
                       ),
                     ),
+                    // Left
                     AnimatedPositioned(
                       duration: defaultDuration,
                       left: _controller.selectedBotttomTab == 0
@@ -165,6 +167,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             press: _controller.updateLeftDoorLock),
                       ),
                     ),
+                    // Bottom
                     AnimatedPositioned(
                       duration: defaultDuration,
                       bottom: _controller.selectedBotttomTab == 0
@@ -179,6 +182,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             press: _controller.updateTrunkDoorLock),
                       ),
                     ),
+                    // Top
                     AnimatedPositioned(
                       duration: defaultDuration,
                       top: _controller.selectedBotttomTab == 0
@@ -226,21 +230,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
                     Positioned(
-                        right: -100 * (1 - _animationCoolGlow.value),
-                        child: AnimatedSwitcher(
-                          duration: defaultDuration,
-                          child: _controller.isCoolSelected
-                              ? Image.asset(
-                                  'assets/images/Cool_glow_2.png',
-                                  key: UniqueKey(),
-                                  width: 200,
-                                )
-                              : Image.asset(
-                                  'assets/images/Hot_glow_4.png',
-                                  key: UniqueKey(),
-                                  width: 200,
-                                ),
-                        ))
+                      right: -100 * (1 - _animationCoolGlow.value),
+                      child: AnimatedSwitcher(
+                        duration: defaultDuration,
+                        child: _controller.isCoolSelected
+                            ? Image.asset(
+                                'assets/images/Cool_glow_2.png',
+                                key: UniqueKey(),
+                                width: 200,
+                              )
+                            : Image.asset(
+                                'assets/images/Hot_glow_4.png',
+                                key: UniqueKey(),
+                                width: 200,
+                              ),
+                      ),
+                    ),
                   ],
                 );
               },
